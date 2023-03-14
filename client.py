@@ -37,8 +37,8 @@ while True:
         # showing image
         cv2.imshow('Received video', frame)
 
-        # exiting
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
+    # exiting
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
 
 cv2.destroyAllWindows()
