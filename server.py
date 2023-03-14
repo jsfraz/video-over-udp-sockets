@@ -37,4 +37,5 @@ while True:
         s.sendto(message, addr)     # sending frame
 
 # TODO end of loop
+# s.close()
 # capture.release()
