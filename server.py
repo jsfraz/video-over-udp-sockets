@@ -31,10 +31,9 @@ while True:
 
         # encoding frame into bytes
         encoded, buffer = cv2.imencode(
-            '.jpg', frame, [cv2.IMWRITE_JPEG_QUALITY, 80])   
-        message = base64.b64encode(buffer)
-
-        s.sendto(message, addr)     # sending frame
+            '.jpg', frame, [cv2.IMWRITE_JPEG_QUALITY, 90])
+        
+        s.sendto(buffer, addr)     # sending frame
 
 # TODO end of loop
 # s.close()

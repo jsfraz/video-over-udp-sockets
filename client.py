@@ -21,10 +21,10 @@ while True:
     s.sendto(b'getFrame', (IP, PORT))
     received, addr = s.recvfrom(BUFF_SIZE)
 
+    
     # encoding bytes info frame
-    data = base64.b64decode(received, ' /')
-    npdata = np.frombuffer(data, dtype=np.uint8)
-    frame = cv2.imdecode(npdata, 1)
+    img_array = np.asarray(bytearray(received), dtype=np.uint8)
+    frame = cv2.imdecode(img_array, 1)
 
     # showing image
     cv2.imshow('Received video', frame)
