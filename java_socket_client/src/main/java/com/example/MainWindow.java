@@ -10,8 +10,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 public class MainWindow extends JFrame {
-    private UdpClientThread thread;     // udp thread
-    private BufferedImage defaultImage;     // default image when client is not receiving data
+    private UdpClientThread thread; // udp thread
+    private BufferedImage defaultImage; // default image when client is not receiving data
     private JLabel picLabel;
 
     public MainWindow() {
@@ -26,10 +26,10 @@ public class MainWindow extends JFrame {
         try {
             defaultImage = ImageIO
                     .read(Thread.currentThread().getContextClassLoader().getResourceAsStream("image.jpg"));
+            picLabel = new JLabel(new ImageIcon(defaultImage));
         } catch (IOException e) {
             e.printStackTrace();
         }
-        setDefaultImage();
 
         // adding label to frame
         add(picLabel);
@@ -42,7 +42,7 @@ public class MainWindow extends JFrame {
         thread.start();
     }
 
-    // update 
+    // update
     public void updateImage(byte[] input) {
         ByteArrayInputStream inputStream = new ByteArrayInputStream(input);
         try {
