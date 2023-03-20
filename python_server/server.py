@@ -31,7 +31,7 @@ while True:
 
         # encoding frame into bytes
         encoded, buffer = cv2.imencode(
-            '.jpg', frame, [cv2.IMWRITE_JPEG_QUALITY, 90])
+            '.jpg', frame, [cv2.IMWRITE_JPEG_QUALITY, 80])
         
         s.sendto(buffer, addr)     # sending frame
 
